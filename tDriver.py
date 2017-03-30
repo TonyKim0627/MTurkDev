@@ -30,7 +30,6 @@ indexS = hitID.find('HITId')
 
 hitID = '3MZ3TAMYTLYFA0GG2LX1HMY6G8XRIK'
 hit = client.get_hit(HITId = hitID)
-print 'Hit {} status: {}'.format(hitID, hit['HIT']['HITStatus'])
 recvResponse = client.list_assignments_for_hit(
                 HITId = hitID,
                 AssignmentStatuses = ['Submitted']
