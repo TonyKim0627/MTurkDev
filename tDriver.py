@@ -4,8 +4,8 @@ import sys
 import boto3
 import json
 region_name = 'us-east-1'
-aws_access_key_id = 'Your AWS Key id here'
-aws_secret_access_key = 'Your AWS Access key here'
+aws_access_key_id = ''
+aws_secret_access_key = ''
 
 #For testing purposes
 #endpoint_url = 'https://mturk-requester-sandbox.us-east-1.amazonaws.com'
@@ -48,4 +48,9 @@ for response in responses:
     if requesterDecision is 'Y':
         client.approve_assignment(
             AssignmentId = workerInputID
+        )
+    elif requesterDecision is 'N':
+        client.reject_assignment(
+            AssignmentId = workerInputID,
+            RequesterFeedback = 'Sorry'
         )
