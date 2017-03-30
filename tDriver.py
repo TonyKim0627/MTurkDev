@@ -37,7 +37,7 @@ recvResponse = client.list_assignments_for_hit(
 )
 
 responses = recvResponse['Assignments']
-print 'There are total of ' + str(len(responses)) + ' responses recorded.'
+print 'There are total of ' + str(len(responses)) + ' responses waiting for approval.'
 
 for response in responses:
     workerID = response['WorkerId']
